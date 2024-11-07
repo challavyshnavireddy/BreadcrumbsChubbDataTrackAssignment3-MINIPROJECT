@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Student Records</title>
+</head>
+<body>
+  <li><a href="{{ url_for('home') }}">Home</a></li>
+  <li><a href="{{ url_for('logout') }}">Logout</a></li>
+  <h1>Total Students</h1>
+  <table border="1">
+    <tr>
+      <th>SID</th>
+      <th>Name</th>
+      <th>Mid1</th>
+      <th>Mid2</th>
+      <th>Mid Average</th>
+      <th>Semester</th>
+      <th>GPA</th>
+      <th>Percentage</th>
+      <th>Status</th>
+      {% if current_user.is_authenticated and current_user.role == 'admin' %}
+        <th>Delete Action</th>
+      {% endif %}
+    </tr>
+    {% for stud in students %}
+    <tr>
+      <td>{{ stud.sid }}</td>
+      <td>{{ stud.name }}</td>
+      <td>{{ stud.mid1 }}</td>
+      <td>{{ stud.mid2 }}</td>
+      <td>{{ stud.mid_avg }}</td>
+      <td>{{ stud.semester }}</td>
+      <td>{{ stud.gpa }}</td>
+      <td>{{ stud.percentage }}</td>
+      <td>{{ stud.status }}</td>
+      
+      {% if current_user.is_authenticated and current_user.role == 'admin' %}
+        <td>
+          <form action="/delete_student/{{ stud.sid }}" method="get">
+            <button>Delete</button>
+          </form>
+        </td>
+      {% endif %}
+    </tr>
+    {% endfor %}
+  </table>
+</body>
+</html>

@@ -1,0 +1,7 @@
+﻿pid,product_name,category,price_in_dollar,quantity,return_rate,uid,user_name,branch
+p01,smart watch,electronics,6,1,2,u01,kamala,kukatpally
+p02,yoga mat,sport,7,4,2,u02,nalini,nizampet
+p03,coffee maker,kitchen,13,2,0,u03,shalini,kukatpally
+p04,sneakers,footwear,22,6,5,u04,kiran,ameerpet
+p05,bluetooth speaker,electronics,3,7,1,u05,maya,nampally
+p06,running shoes,footwear,9,4,2,u06,mitra,Jubilee Hills

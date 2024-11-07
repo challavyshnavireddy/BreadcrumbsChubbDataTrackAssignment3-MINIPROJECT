@@ -1,0 +1,7 @@
+﻿pid,product_name,category,price_in_dollar,quantity,return_rate,uid,user_name,branch
+p07,purifier,kitchen,25,6,1,u07,chaitra,Secunderabad
+p08,blender,kitechen,7,2,0,u08,fairaj,Secunderabad
+p09,gaming mouse,electronics,12,34,0,u09,halidi,Secunderabad
+p10,wireless earbuds,electronics,4,5,0,u10,chandani,ameerpet
+p11,laptop stand,electronics,5,6,0,u11,prateek,Secunderabad
+,portable charger,electronics,9,7,0,u12,hareem,ameerpet

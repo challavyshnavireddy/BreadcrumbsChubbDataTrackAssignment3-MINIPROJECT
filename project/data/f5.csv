@@ -1,0 +1,7 @@
+﻿pid,product_name,category,price_in_dollar,quantity,return_rate,uid,user_name,branch
+p25,infant oil,baby products,6,22,0,u25,srikar,Secunderabad
+p26,baby bottle,baby products,7,89,0,u26,challi,Secunderabad
+p27,baby soap,baby products,8,56,0,u27,varma,Secunderabad
+p28,baby shampoo,baby products,9,77,0,u28,kalyani,Secunderabad
+p29,baby teething ring,baby products,19,89,0,u29,snipati,Secunderabad
+p30,baby crib,baby products,9,54,0,u30,,Secunderabad

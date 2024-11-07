@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Home - Data Processing App</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}">
+</head>
+<body>
+    <!-- Navigation Bar -->
+    <nav class="navbar">
+        <div class="container">
+            <a href="{{ url_for('home') }}" class="navbar-brand">Data Processing App</a>
+            <ul class="navbar-nav">
+                <li><a href="{{ url_for('home') }}">Home</a></li>
+                {% if current_user.is_authenticated %}
+                        <li><a href="{{ url_for('sales_analysis') }}">Sales Analysis</a></li>
+                    <li><a href="{{ url_for('analysis') }}">View
+                        {% if current_user.role == 'admin' %}and edit
+                        {% endif %}
+                         Products Data</a></li>
+                    <li><a href="{{ url_for('logout') }}">Logout</a></li>
+                {% else %}
+                    <li><a href="{{ url_for('login_page') }}">Login</a></li>
+                    <li><a href="{{ url_for('register_page') }}">Register</a></li>
+                {% endif %}
+            </ul>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <header class="hero">
+        <div class="container">
+            <h1>Welcome to the Data Processing App</h1>
+            <p>Effortlessly process, analyze, and manage your products data with ease and efficiency.</p>
+            {% if not current_user.is_authenticated %}
+                <a href="{{ url_for('register_page') }}" class="btn btn-primary">Get Started</a>
+            {% endif %}
+        </div>
+    </header>
+
+    <!-- Main Body Content -->
+    <main class="container">
+        <section class="features">
+            <div class="feature">
+                <h2>Upload & Process Data</h2>
+                <p>Upload data in various formats, clean it, and get detailed reports sales.</p>
+            </div>
+            <div class="feature">
+                <h2>Admin Dashboard</h2>
+                <p>Admins can access detailed analysis and insights to monitor and evaluate sales.</p>
+            </div>
+            <div class="feature">
+                <h2>Secure Access</h2>
+                <p>All your data is securely managed with user-specific access and role-based privileges.</p>
+            </div>
+        </section>
+    </main>
+
+    <!-- Footer Section -->
+    <footer class="footer">
+        <div class="container">
+            <p>&copy; {{ current_year }} Data Processing App. All rights reserved.</p>
+            <p>Made with ❤️ for easy data processing and analysis.</p>
+        </div>
+    </footer>
+</body>
+</html>

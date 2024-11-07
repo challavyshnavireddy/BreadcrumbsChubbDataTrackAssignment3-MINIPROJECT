@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Login</title>
+</head>
+<body>
+    <h2>Login</h2>
+    <form method="POST">
+        {{ form.hidden_tag() }}  <!-- CSRF token -->
+        <div>
+            {{ form.username.label }}: {{ form.username(size=30) }}
+        </div>
+        <div>
+            {{ form.password.label }}: {{ form.password(size=30) }}
+        </div>
+        <div>
+            <button type="submit">Login</button>
+        </div>
+    </form>
+    <h3>not yet registered?</h3>
+    <li><a href="{{ url_for('register_page') }}">Register</a></li>
+    {% if wrong_cred %}
+        <p>{{ wrong_cred }}</p>
+    {% endif %}
+</body>
+</html>

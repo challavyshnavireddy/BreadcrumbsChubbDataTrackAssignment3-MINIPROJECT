@@ -1,0 +1,7 @@
+﻿pid,product_name,category,price_in_dollar,quantity,return_rate,uid,user_name,branch
+p19,electric kettle,kitchen,7,5,0,u19,yarni,nampally
+,camping stove,kitchen,,56,5,u20,hemanth,kukatpally
+p21,water filter,kitchen,8,56,7,u21,krishna,nampally
+p22,straightener,general,7,5,8,u22,karina,kukatpally
+p23,baby soap,baby products,4,68,0,u23,humedh,nampally
+p24,baby wipes,baby products,5,33,0,u24,laya,Secunderabad

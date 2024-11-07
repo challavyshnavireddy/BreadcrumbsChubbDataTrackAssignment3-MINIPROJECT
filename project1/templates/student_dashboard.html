@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Student Dashboard</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}">
+</head>
+<body>
+    <li><a href="{{ url_for('logout') }}">Logout</a></li>
+    <li><a href="{{ url_for('home') }}">Home</a></li>
+    <h1>Student Dashboard</h1>
+    
+    <div class="dashboard">
+        <!-- Midterm Scores Bar Chart -->
+        <div class="chart">
+            <h2>Midterm Scores</h2>
+            <img src="{{ midterm_chart }}" alt="Midterm Scores Chart">
+        </div>
+
+        <!-- GPA Line Chart -->
+        <div class="chart">
+            <h2>GPA Analysis</h2>
+            <img src="{{ gpa_chart }}" alt="GPA Chart">
+        </div>
+
+        <!-- Pass/Fail Pie Chart -->
+        <div class="chart">
+            <h2>Pass/Fail Distribution</h2>
+            <img src="{{ status_chart }}" alt="Status Distribution Chart">
+        </div>
+
+        <!-- Heatmap of Scores -->
+        <div class="chart">
+            <h2>Score Heatmap</h2>
+            <img src="{{ heatmap_chart }}" alt="Score Heatmap">
+        </div>
+
+        <!-- GPA vs. Percentage Scatter Plot -->
+        <div class="chart">
+            <h2>GPA vs. Percentage</h2>
+            <img src="{{ scatter_chart }}" alt="GPA vs. Percentage Chart">
+        </div>
+    </div>
+</body>
+</html>

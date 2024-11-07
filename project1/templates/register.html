@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Register</title>
+</head>
+<body>
+    <h2>Register</h2>
+    <form method="POST">
+        {{ form.hidden_tag() }}  <!-- CSRF token -->
+        <div>
+            {{ form.username.label }}: {{ form.username(size=30) }}
+        </div>
+        <div>
+            {{ form.password.label }}: {{ form.password(size=30) }}
+        </div>
+        <div>
+            {{ form.confirm_password.label }}: {{ form.confirm_password(size=30) }}
+        </div>
+        <div>
+            <label for="role">Select Role:</label>
+            {{ form.role() }}  <!-- Display the role selection (Admin/User) -->
+        </div>
+        <div>
+            <button type="submit">Register</button>
+        </div>
+    </form>
+</body>
+</html>

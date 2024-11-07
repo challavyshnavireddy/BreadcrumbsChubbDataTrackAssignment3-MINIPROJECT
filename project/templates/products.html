@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Product Data</title>
+</head>
+<body>
+    <li><a href="{{ url_for('home') }}">Home</a></li>
+    <li><a href="{{ url_for('logout') }}">Logout</a></li>
+    <h1>Product List</h1>
+    
+    <!-- Check if the current user is admin -->
+    {% if current_user.role == 'admin' %}
+        <p><strong>Admin view: You can delete products.</strong></p>
+    {% endif %}
+
+    <table border="1">
+        <thead>
+            <tr>
+                <th>PID</th>
+                <th>Product Name</th>
+                <th>Category</th>
+                <th>Price in USD</th>
+                <th>Price in INR</th>
+                <th>Price Category</th>
+                <th>Quantity</th>
+                <th>Return Rate</th>
+                <th>User ID</th>
+                <th>User Name</th>
+                <th>Branch</th>
+                {% if current_user.role == 'admin' %}
+                    <th>Actions</th>
+                {% endif %}
+            </tr>
+        </thead>
+        <tbody>
+            {% for product in products %}
+            <tr>
+                <td>{{ product.pid }}</td>
+                <td>{{ product.product_name }}</td>
+                <td>{{ product.category }}</td>
+                <td>{{ product.price_in_dollar }}</td>
+                <td>{{ product.price_in_inr }}</td>
+                <td>{{ product.price_category }}</td>
+                <td>{{ product.quantity }}</td>
+                <td>{{ product.return_rate }}</td>
+                <td>{{ product.uid }}</td>
+                <td>{{ product.user_name }}</td>
+                <td>{{ product.branch }}</td>
+                
+                <!-- Show delete button only if the user is an admin -->
+                {% if current_user.role == 'admin' %}
+                    <td>
+                        <form action="{{ url_for('delete_product', pid=product.pid) }}" method="POST" onsubmit="return confirm('Are you sure you want to delete this product?');">
+                            <button type="submit">Delete</button>
+                        </form>
+                    </td>
+                {% endif %}
+            </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+</body>
+</html>
